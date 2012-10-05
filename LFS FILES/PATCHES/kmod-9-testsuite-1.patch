@@ -1,0 +1,85 @@
+Submitted By:            Matt Burgess <matthew_at_linuxfromscratch_dot_org>
+Date:                    2012-07-13
+Initial Package Version: 9
+Upstream Status:         From Upstream
+Origin:                  http://www.spinics.net/lists/linux-modules/msg00800.html
+Description:             Fixes an assertion failure when running the testsuite
+                         on x86 hosts.
+
+diff -Naur kmod-9.orig/testsuite/init_module.c kmod-9/testsuite/init_module.c
+--- kmod-9.orig/testsuite/init_module.c	2012-06-19 20:02:47.171270610 +0000
++++ kmod-9/testsuite/init_module.c	2012-07-10 18:49:59.761001582 +0000
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include <assert.h>
++#include <elf.h>
+ #include <errno.h>
+ #include <dirent.h>
+ #include <fcntl.h>
+@@ -206,6 +207,12 @@
+ 	return ret;
+ }
+ 
++static uint8_t elf_identify(void *mem)
++{
++	uint8_t *p = mem;
++	return p[EI_CLASS];
++}
++
+ TS_EXPORT long init_module(void *mem, unsigned long len, const char *args);
+ 
+ /*
+@@ -225,6 +232,8 @@
+ 	const void *buf;
+ 	uint64_t bufsize;
+ 	int err;
++	uint8_t class;
++	off_t offset;
+ 
+ 	init_retcodes();
+ 
+@@ -237,13 +246,20 @@
+ 	kmod_elf_unref(elf);
+ 
+ 	/*
+-	 * We couldn't find the module's name inside the ELF file. Just exit
+-	 * as if it was successful
++	 * We couldn't find the parse the ELF file. Just exit as if it was
++	 * successful
+ 	 */
+ 	if (err < 0)
+ 		return 0;
+ 
+-	modname = (char *)buf + offsetof(struct module, name);
++	/* We need to open both 32 and 64 bits module - hack! */
++	class = elf_identify(mem);
++	if (class == ELFCLASS64)
++		offset = MODULE_NAME_OFFSET_64;
++	else
++		offset = MODULE_NAME_OFFSET_32;
++
++	modname = (char *)buf + offset;
+ 	mod = find_module(modules, modname);
+ 	if (mod != NULL) {
+ 		errno = mod->errcode;
+diff -Naur kmod-9.orig/testsuite/stripped-module.h kmod-9/testsuite/stripped-module.h
+--- kmod-9.orig/testsuite/stripped-module.h	2012-05-23 23:26:30.318944359 +0000
++++ kmod-9/testsuite/stripped-module.h	2012-07-10 18:49:59.761001582 +0000
+@@ -13,6 +13,7 @@
+ };
+ 
+ #define MODULE_NAME_LEN (64 - sizeof(unsigned long))
++
+ struct module
+ {
+ 	enum module_state state;
+@@ -24,4 +25,8 @@
+ 	char name[MODULE_NAME_LEN];
+ };
+ 
++/*                                padding */
++#define MODULE_NAME_OFFSET_64 4 + 4           + 2 * 8
++#define MODULE_NAME_OFFSET_32 4 + 2 * 4
++
+ #endif
