@@ -8,5 +8,7 @@ Disclaimer: USE AT YOUR OWN RISK! ANY AND ALL DAMAGE TO SOFTWARE OR HARDWARE IS 
 
 
 
-Head Develepor
-          -Ninjafox217
+Project Manager: TheMinecraftianDaily
+Head Develepor: Ninjafox217
+Lead Devloper: zacchaeusliang
+Business Adviser: torinzaugg
