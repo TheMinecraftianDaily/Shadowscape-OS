@@ -9,6 +9,6 @@ Disclaimer: USE AT YOUR OWN RISK! ANY AND ALL DAMAGE TO SOFTWARE OR HARDWARE IS 
 
 
 Project Manager: TheMinecraftianDaily
-Head Develepor: Ninjafox217
+Head Develeper: Ninjafox217
 Lead Devloper: zacchaeusliang
 Business Adviser: torinzaugg
