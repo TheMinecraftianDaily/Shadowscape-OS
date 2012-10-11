@@ -1,4 +1,5 @@
 Name: Shadowscape
+Group: BurnsNet Programming
 Type: Operating System
 Code Lang: C/C++
 Version: Alpha 1.0 (Shadowscape Skin 1.0.0)
