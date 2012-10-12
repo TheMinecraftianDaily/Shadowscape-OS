@@ -1,12 +1,26 @@
 THE FOLLOWING IS THE LIST OF CURRENTLY FILLED POSITIONS WITHIN THE SHADOWSCAPE DEVELOPMENT TEAM. POSITIONS WILL BE ADDED AS DEVELOPMENT CONTINUES.
 
 Shadowscape Project Team Positions:
-	Project Manager: TheMinecraftianDaily Matt
-	Lead Developer: Ninjafox217 Ryan "Ryry" Kerr
-	Business Advisor: torinzaugg Torin D. Zaugg
-	Assistant Project Manager: *
-	Assistant Developer: zacchaeusliang Zacchaeus liang
+	Co-president: TheMinecraftianDaily
+	Co-president: Ninjafox217
+	CEO: ContraBombarde32
+	Vice-CEO: *
+	Director: *
+	Co-Director: zacchaeusliang
 	Developer: *
 	Developer: *
 	Developer: *
-	
+	Coder: *
+	Coder: *
+	Coder: *
+	De-Bug: ContraBombarde32
+
+Description of Positions (responcibilitys):
+Co-president(s): Manage the business. Make all of the important desitions for the business. Are the heads of the business.
+CEO (Cheif Executive Offiver): Manages all of the legal, business, and non-code related aspects of the business including financhal work, customer support, etc.
+Vice-CEO: Assistant to the CEO.
+Director: Incarge of makeing sure the code is written, works, and is useable.
+Co-Director: Assistatant to the Director.
+Developer: Writes the code.
+Coder: Also writes the code (most of the repetitive and annoying stuff, also troubleshoots and de-bugs)
+De-bug: De-bugs the products and writes user manuals. Makes sure people of all difrent expirecnce levles can use the products.
