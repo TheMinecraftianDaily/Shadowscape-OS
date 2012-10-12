@@ -1,11 +1,11 @@
 THE FOLLOWING IS THE LIST OF CURRENTLY FILLED POSITIONS WITHIN THE SHADOWSCAPE DEVELOPMENT TEAM. POSITIONS WILL BE ADDED AS DEVELOPMENT CONTINUES.
 
 Shadowscape Project Team Positions:
-	Project Manager: TheMinecraftianDaily
-	Lead Developer: Ninjafox217
-	Business Advisor: torinzaugg
+	Project Manager: TheMinecraftianDaily Matt
+	Lead Developer: Ninjafox217 Ryan "Ryry" Kerr
+	Business Advisor: torinzaugg Torin D. Zaugg
 	Assistant Project Manager: *
-	Assistant Developer: zacchaeusliang
+	Assistant Developer: zacchaeusliang Zacchaeus liang
 	Developer: *
 	Developer: *
 	Developer: *
